@@ -4,7 +4,7 @@ VOLUME [ "/data" ]
 WORKDIR /workdir
 
 RUN apt update; \
-    apt install wget -y; \
+    apt install wget curl -y; \
     wget https://golang.org/dl/go1.16.7.linux-amd64.tar.gz; \
     tar -C /usr/local/ -xzf go1.16.7.linux-amd64.tar.gz; \
     mkdir /workdir/go; \
