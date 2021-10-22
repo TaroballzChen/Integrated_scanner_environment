@@ -28,6 +28,7 @@ apt install wget zmap nmap -y
 wget https://golang.org/dl/go1.16.7.linux-amd64.tar.gz
 tar -C /usr/local/ -xzf go1.16.7.linux-amd64.tar.gz
 mkdir /workdir/go
+rm -rf go*.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=/workdir/go
 export GO111MODULE=off
@@ -37,8 +38,8 @@ cd $GOPATH/src/github.com/zmap/zgrab2
 export GO111MODULE=on
 make
 cp cmd/zgrab2/zgrab2 /usr/bin
+ln -s /usr/sbin/zmap /usr/bin/zmap
 cd /workdir
-rm -rf go*.tar.gz
 
 # Download Taiwan all ip CIDR data
 wget http://www.ipdeny.com/ipblocks/data/countries/tw.zone
