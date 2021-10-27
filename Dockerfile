@@ -24,7 +24,8 @@ RUN apt update; \
     apt install python3-pip -y; \
     \
     # Download Taiwan all ip CIDR data
-    wget http://www.ipdeny.com/ipblocks/data/countries/tw.zone; \
+    wget http://www.ipdeny.com/ipblocks/data/countries/tw.zone -O /workdir/TW.CIDR; \
+    for i in $(cat /workdir/TW.CIDR);do prips $i >> /workdir/tw.zone;done; \
     # node deploy to railyway.app for manage by ssh
     apt install ssh npm -y; \
     npm install -g wstunnel; \
