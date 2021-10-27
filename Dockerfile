@@ -20,13 +20,13 @@ RUN apt update; \
     cd /workdir; \
     rm -rf go*.tar.gz; \
     \
-    apt install zmap nmap -y; \
+    apt install zmap nmap prips -y; \
     apt install python3-pip -y; \
     \
     # Download Taiwan all ip CIDR data
     wget http://www.ipdeny.com/ipblocks/data/countries/tw.zone; \
     # node deploy to railyway.app for manage by ssh
-    apt install ssh wget npm -y; \
+    apt install ssh npm -y; \
     npm install -g wstunnel; \
     mkdir /run/sshd; \
     mkdir -p ~/.ssh; \
