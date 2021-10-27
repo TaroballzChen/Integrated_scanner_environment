@@ -42,4 +42,5 @@ ln -s /usr/sbin/zmap /usr/bin/zmap
 cd /workdir
 
 # Download Taiwan all ip CIDR data
-wget http://www.ipdeny.com/ipblocks/data/countries/tw.zone
+wget http://www.ipdeny.com/ipblocks/data/countries/tw.zone -O /workdir/TW.CIDR;
+for i in $(cat /workdir/TW.CIDR);do prips $i >> /workdir/tw.zone;done;
