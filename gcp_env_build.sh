@@ -32,7 +32,7 @@ rm -rf go*.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=/workdir/go
 export GO111MODULE=off
-apt install git build-essential ca-certificates -y
+apt install git build-essential ca-certificates prips -y
 go get github.com/zmap/zgrab2
 cd $GOPATH/src/github.com/zmap/zgrab2
 export GO111MODULE=on
